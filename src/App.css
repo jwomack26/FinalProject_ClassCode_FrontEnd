@@ -1,4 +1,44 @@
 
+.Heading{
+    text-align: center;
+    font-family: Barbatrick;
+    font-size: 70px;
+
+}
+.SubHeading{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Avenir Light';
+    margin-top: -20px;
+    letter-spacing: 3px;
+}
+
+.Top{
+    background-color: limegreen;
+    width: 100%;
+
+}
+
+.CategoryColumn{
+    background-color: black;
+    color: white;
+    font-family: 'Avenir Light';
+    
+
+}
+
+.buttons{
+    color: black;
+}
+
+.CategoryColumnHeading{
+    color:limegreen;
+    font-family: 'Avenir Black';
+}
+
+.Categories{
+    color: limegreen;
+}
 
 
 /*.App {*/
