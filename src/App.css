@@ -1,4 +1,4 @@
-
+@import '~antd/dist/antd.css';
 .Heading{
     text-align: center;
     font-family: Barbatrick;
@@ -20,7 +20,7 @@
 }
 
 .CategoryColumn{
-    background-color: black;
+   background-color: black;
     color: white;
     font-family: 'Avenir Light';
     
@@ -31,14 +31,22 @@
     color: black;
 }
 
-.CategoryColumnHeading{
-    color:limegreen;
-    font-family: 'Avenir Black';
+.p{
+        font-family: 'Avenir Black';
 }
 
 .Categories{
     color: limegreen;
 }
+
+.submit{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: limegreen;
+    color: black;
+    margin-left: 5px;
+}
+
 
 
 /*.App {*/
