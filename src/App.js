@@ -32,21 +32,40 @@ function App() {
     setCategories(data);
   };
 
+  const fetchQuestions = async () => {
+    console.log('this will fetch the questions');
+
+    // let res = await fetch('http://localhost:3000/api/v1/categories');
+    //   https://cohort11a-capstone-api.herokuapp.com
+    //   console.log(process.env.API_URL)
+    //   console.log(process.env.REACT_APP_API_URL)
+      console.log(`${apiUrl}/api/v1/questions`)
+    let res = await fetch(`${apiUrl}/api/v1/questions`);
+    let data = await res.json();
+    console.log(data);
+    console.log("Masood")
+    setQuestions(data);
+  };  
+
   useEffect(() => {
     // this code will run only once on component mount
     fetchCategories()
   }, [])
 
+
+
     useEffect(() => {
         // this code is going to run whenever the selectedCategory changes
         // fetchQuestions() TheTodo: fetch and show the questions
-    }, [selectedCategory])
+    }, [selectedCategory, selectedQuestion])
+
 
   // useEffect(() => {
   //   // this code will run every time the someStateVariable changes
   //   // this code will run every time var2 OR someStateVariable changes
   //   // write code here that reloads the page as a side effect of var2 OR someStateVariable changing
   // }, [someStateVariable, var2])
+
 
 
   const fetchQuestionsForCategory = async (id) => {
@@ -60,7 +79,7 @@ function App() {
   
   const fetchAnswerForQuestion = async (id) => {
     console.log('fetch answer for this question', id);
-    let res = await fetch(`${apiUrl}/api/v1/categories/${id}/Answers`);
+    let res = await fetch(`${apiUrl}/api/v1/categories/${id}/answers`);
     let data = await res.json();
     console.log(data);
     setanswers(data);
@@ -156,15 +175,7 @@ function App() {
             <br/>
             </div>}
           </div>
-          
-          <ul>
-            {questions && questions.map((question) => {
-              return <li key={question.id}>
-                {question.questionTxt}
-              </li>
-
-            })}
-          </ul>
+      
 
 
   
@@ -176,8 +187,8 @@ function App() {
                             size="small"
                             // header={<div className={'font-bold'}>Answers List</div>}
                             footer={<div>
-                                <input value={questionTxt} onChange={(ev) => {
-                                    setQuestionTxt(ev.currentTarget.value);
+                                <input value={answerTxt} onChange={(ev) => {
+                                    setanswerTxt(ev.currentTarget.value);
                                 }} type="text" className={'border p-1 mr-5 w-2/3'}/>
                                 <Button type={'primary'} onClick={createANewAnswer}>Add Answer</Button>
                             </div>}
