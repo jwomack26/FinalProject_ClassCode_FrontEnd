@@ -52,12 +52,17 @@ function App() {
     fetchCategories()
   }, [])
 
+  useEffect(() => {
+    // this code will run only once on component mount
+    fetchQuestions()
+  }, [])
+
 
 
     useEffect(() => {
         // this code is going to run whenever the selectedCategory changes
         // fetchQuestions() TheTodo: fetch and show the questions
-    }, [selectedCategory, selectedQuestion])
+    }, [selectedCategory])
 
 
   // useEffect(() => {
@@ -227,3 +232,5 @@ function App() {
 
 
 export default App;
+
+
